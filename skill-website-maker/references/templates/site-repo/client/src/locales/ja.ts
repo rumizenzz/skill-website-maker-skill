@@ -99,6 +99,10 @@ export const ja = {
       exit_fullscreen: "全画面を終了",
       volume: "音量",
       audience_mode: "観客モード",
+      save_offline: "オフライン保存",
+      saving_offline: "保存中...",
+      saved_offline: "保存済み",
+      save_offline_retry: "再試行",
       continue_title: "続きから再開しますか？",
       continue_body: "前回の位置から再開します。",
       start_over: "最初から",
@@ -211,4 +215,3 @@ export const ja = {
       "Codex スキル配布のために作られています。サイトのソースリポジトリは非公開でもよく、スキルリポジトリは公開です。",
   },
 } as const;
-

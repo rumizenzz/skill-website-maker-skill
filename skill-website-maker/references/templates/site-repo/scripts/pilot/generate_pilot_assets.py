@@ -47,7 +47,8 @@ def format_ts(sec: float) -> str:
 
 
 def load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    # Allow UTF-8 with BOM (PowerShell Set-Content -Encoding utf8 writes BOM on Windows PowerShell).
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def write_text(path: Path, content: str) -> None:
@@ -192,6 +193,7 @@ def render_stage_script(spec: dict[str, Any]) -> dict[str, Any]:
     cast = spec.get("cast") or []
     lines = spec.get("lines") or []
     stage_events = spec.get("stage_events") or []
+    scenes_spec = spec.get("scenes") or []
 
     characters = []
     for c in cast:
@@ -243,14 +245,45 @@ def render_stage_script(spec: dict[str, Any]) -> dict[str, Any]:
 
     intro_end = float(spec.get("intro_end_sec") or 0.0)
     max_to = max([float(l["to_sec"]) for l in lines], default=0.0)
+    max_scene_to = 0.0
+
+    scenes: list[dict[str, Any]] = []
+    if isinstance(scenes_spec, list) and scenes_spec:
+        for s in scenes_spec:
+            if not isinstance(s, dict):
+                continue
+            from_sec = float(s.get("from_sec") or 0.0)
+            to_sec = float(s.get("to_sec") or 0.0)
+            if to_sec <= from_sec:
+                continue
+            scenes.append(
+                {
+                    "id": str(s.get("id") or "stage"),
+                    "fromSec": from_sec,
+                    "toSec": to_sec,
+                    "camera": str(s.get("camera") or "wide"),
+                }
+            )
+            max_scene_to = max(max_scene_to, to_sec)
+
     # Keep a 22m container for the stage until maintainers regenerate a full episode.
-    stage_to = max(1320.0, max_to + 1.0, intro_end + 1.0)
+    stage_to = max(1320.0, max_to + 1.0, intro_end + 1.0, max_scene_to + 1.0)
+
+    if not scenes:
+        scenes = [{"id": "stage", "fromSec": 0.0, "toSec": stage_to, "camera": "wide"}]
+    else:
+        scenes.sort(key=lambda s: float(s.get("fromSec") or 0.0))
+        # Ensure coverage from 0..stage_to (best effort).
+        if float(scenes[0].get("fromSec") or 0.0) > 0.0:
+            scenes.insert(0, {"id": "stage", "fromSec": 0.0, "toSec": float(scenes[0]["fromSec"]), "camera": "wide"})
+        if float(scenes[-1].get("toSec") or 0.0) < stage_to:
+            scenes[-1]["toSec"] = stage_to
 
     return {
         "version": str(spec.get("id") or "pilot-v1"),
         "introEndSec": intro_end,
         "characters": characters,
-        "scenes": [{"id": "stage", "fromSec": 0, "toSec": stage_to, "camera": "wide"}],
+        "scenes": scenes,
         "events": events,
     }
 

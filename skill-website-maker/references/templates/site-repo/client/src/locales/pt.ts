@@ -99,6 +99,10 @@ export const pt = {
       exit_fullscreen: "Sair da tela cheia",
       volume: "Volume",
       audience_mode: "Modo audiencia",
+      save_offline: "Salvar offline",
+      saving_offline: "Salvando...",
+      saved_offline: "Salvo",
+      save_offline_retry: "Tentar de novo",
       continue_title: "Continuar assistindo?",
       continue_body: "Retome de onde parou.",
       start_over: "Comecar de novo",
@@ -212,4 +216,3 @@ export const pt = {
       "Feito para distribuicao de skills do Codex. O repo fonte do site pode ser privado; o repo do skill e publico.",
   },
 } as const;
-

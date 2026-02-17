@@ -8,6 +8,11 @@ for = "/show/*/*.mp3"
   Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
+for = "/sw.js"
+  [headers.values]
+  Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
 for = "/show/*/*.svg"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"

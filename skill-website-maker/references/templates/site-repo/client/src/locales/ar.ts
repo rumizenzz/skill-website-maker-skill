@@ -99,6 +99,10 @@ export const ar = {
       exit_fullscreen: "الخروج من ملء الشاشة",
       volume: "الصوت",
       audience_mode: "وضع الجمهور",
+      save_offline: "حفظ دون اتصال",
+      saving_offline: "جار الحفظ...",
+      saved_offline: "تم الحفظ",
+      save_offline_retry: "إعادة المحاولة",
       continue_title: "متابعة المشاهدة؟",
       continue_body: "استئناف من حيث توقفت.",
       start_over: "ابدأ من جديد",
@@ -210,4 +214,3 @@ export const ar = {
     blurb: "مصمم لتوزيع مهارات Codex. يمكن ان يكون مستودع مصدر الموقع خاصا؛ مستودع المهارة عام.",
   },
 } as const;
-

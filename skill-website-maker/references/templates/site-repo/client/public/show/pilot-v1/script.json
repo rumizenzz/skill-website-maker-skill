@@ -26,8 +26,32 @@
   "scenes": [
     {
       "id": "stage",
-      "fromSec": 0,
-      "toSec": 1320.0,
+      "fromSec": 0.0,
+      "toSec": 240.0,
+      "camera": "wide"
+    },
+    {
+      "id": "cafe",
+      "fromSec": 240.0,
+      "toSec": 720.0,
+      "camera": "two"
+    },
+    {
+      "id": "workshop",
+      "fromSec": 720.0,
+      "toSec": 1080.0,
+      "camera": "two"
+    },
+    {
+      "id": "apartment",
+      "fromSec": 1080.0,
+      "toSec": 1200.0,
+      "camera": "wide"
+    },
+    {
+      "id": "stage",
+      "fromSec": 1200.0,
+      "toSec": 1321.0,
       "camera": "wide"
     }
   ],
@@ -62,7 +86,7 @@
       "fromSec": 14.0,
       "toSec": 20.5,
       "speaker": "host",
-      "text": "Its not magic. Its a checklist. Which is basically magic for adults."
+      "text": "It's not magic. It's a checklist. Which is basically magic for adults."
     },
     {
       "type": "laugh",
@@ -74,7 +98,7 @@
       "fromSec": 23.0,
       "toSec": 28.5,
       "speaker": "friend1",
-      "text": "So you are telling me the skill ships a show... about the skill?"
+      "text": "So you're telling me the skill ships a show... about the skill?"
     },
     {
       "type": "gesture",
@@ -87,7 +111,7 @@
       "fromSec": 29.0,
       "toSec": 34.0,
       "speaker": "host",
-      "text": "Exactly. Its documentation, but with a budget of two polygons."
+      "text": "Exactly. It's documentation, but with a budget of two polygons."
     },
     {
       "type": "laugh",
@@ -99,7 +123,7 @@
       "fromSec": 36.0,
       "toSec": 43.0,
       "speaker": "ops",
-      "text": "As long as the installer refuses to run if Codex is not initialized. I sleep."
+      "text": "As long as the installer refuses to run if Codex is not initialized, I sleep."
     },
     {
       "type": "gesture",
@@ -129,9 +153,485 @@
     {
       "type": "line",
       "fromSec": 58.0,
-      "toSec": 66.0,
+      "toSec": 74.0,
       "speaker": "host",
-      "text": "This is a placeholder pilot audio. Maintainers can regenerate the full episode offline."
+      "text": "For the public site: no runtime voice API calls. You can replay this episode without spending anyone's credits."
+    },
+    {
+      "type": "line",
+      "fromSec": 75.0,
+      "toSec": 93.0,
+      "speaker": "friend1",
+      "text": "So it's like: you publish a skill, and the skill publishes the skill publisher. That feels illegal in three jurisdictions."
+    },
+    {
+      "type": "gesture",
+      "atSec": 92.9,
+      "target": "friend1",
+      "kind": "shrug"
+    },
+    {
+      "type": "laugh",
+      "atSec": 93.2,
+      "intensity": 0.7
+    },
+    {
+      "type": "line",
+      "fromSec": 94.0,
+      "toSec": 112.0,
+      "speaker": "host",
+      "text": "Relax. It's two repos. One public for the skill folder. One usually private for the website source, deployed publicly."
+    },
+    {
+      "type": "gesture",
+      "atSec": 112.2,
+      "target": "host",
+      "kind": "point"
+    },
+    {
+      "type": "line",
+      "fromSec": 113.0,
+      "toSec": 130.0,
+      "speaker": "ops",
+      "text": "Private repo, public site. Like a kitchen. You don't need to see my cabinets to taste the soup."
+    },
+    {
+      "type": "laugh",
+      "atSec": 130.1,
+      "intensity": 0.55
+    },
+    {
+      "type": "line",
+      "fromSec": 131.0,
+      "toSec": 147.0,
+      "speaker": "friend2",
+      "text": "Is the soup SemVer flavored? Because I only eat versions with three numbers."
+    },
+    {
+      "type": "laugh",
+      "atSec": 147.1,
+      "intensity": 0.55
+    },
+    {
+      "type": "line",
+      "fromSec": 148.0,
+      "toSec": 170.0,
+      "speaker": "host",
+      "text": "Yes: SemVer, Keep a Changelog, and a secret scan so you don't accidentally publish a .env and your dignity."
+    },
+    {
+      "type": "gesture",
+      "atSec": 170.6,
+      "target": "host",
+      "kind": "nod"
+    },
+    {
+      "type": "line",
+      "fromSec": 171.0,
+      "toSec": 190.0,
+      "speaker": "ops",
+      "text": "If you paste an API key into chat, it's considered compromised. Rotate it. Do not argue with the robot."
+    },
+    {
+      "type": "gesture",
+      "atSec": 181.8,
+      "target": "ops",
+      "kind": "facepalm"
+    },
+    {
+      "type": "line",
+      "fromSec": 191.0,
+      "toSec": 214.0,
+      "speaker": "host",
+      "text": "We even give you a short installer: curl to /install.sh or iwr to /install.ps1. Same command updates later."
+    },
+    {
+      "type": "line",
+      "fromSec": 215.0,
+      "toSec": 235.0,
+      "speaker": "friend1",
+      "text": "A one-liner that updates itself. Finally, a relationship where someone actually changes when they promise."
+    },
+    {
+      "type": "laugh",
+      "atSec": 235.0,
+      "intensity": 0.6
+    },
+    {
+      "type": "line",
+      "fromSec": 242.0,
+      "toSec": 265.0,
+      "speaker": "friend2",
+      "text": "Okay, I'm in. But explain CODEX_HOME like I'm five and my terminal is judging me."
+    },
+    {
+      "type": "line",
+      "fromSec": 266.0,
+      "toSec": 292.0,
+      "speaker": "host",
+      "text": "CODEX_HOME is just the folder Codex uses for skills and auth. Default is ~/.codex on macOS or %USERPROFILE%\\.codex on Windows."
+    },
+    {
+      "type": "gesture",
+      "atSec": 266.8,
+      "target": "host",
+      "kind": "wave"
+    },
+    {
+      "type": "line",
+      "fromSec": 293.0,
+      "toSec": 315.0,
+      "speaker": "ops",
+      "text": "And if you moved it? Set CODEX_HOME. Otherwise the installer will refuse and politely blame you."
+    },
+    {
+      "type": "line",
+      "fromSec": 316.0,
+      "toSec": 340.0,
+      "speaker": "friend1",
+      "text": "Installers refusing politely is my love language. 'Error: you're not ready for commitment.'"
+    },
+    {
+      "type": "gesture",
+      "atSec": 339.8,
+      "target": "friend1",
+      "kind": "shrug"
+    },
+    {
+      "type": "line",
+      "fromSec": 341.0,
+      "toSec": 370.0,
+      "speaker": "host",
+      "text": "The gate checks four things: the folder exists, skills/ exists, auth.json exists, and the built-in installer script exists."
+    },
+    {
+      "type": "gesture",
+      "atSec": 370.1,
+      "target": "host",
+      "kind": "nod"
+    },
+    {
+      "type": "line",
+      "fromSec": 371.0,
+      "toSec": 395.0,
+      "speaker": "friend2",
+      "text": "That last one is my favorite. 'I can't install skills unless I can prove you know how to install skills.'"
+    },
+    {
+      "type": "line",
+      "fromSec": 396.0,
+      "toSec": 422.0,
+      "speaker": "ops",
+      "text": "It's not recursion. It's safety. Also: it prevents installing into a random folder you'll never use."
+    },
+    {
+      "type": "line",
+      "fromSec": 423.0,
+      "toSec": 450.0,
+      "speaker": "host",
+      "text": "Once it passes, it downloads the public skill repo zip, extracts, and copies only the skill folder into CODEX_HOME/skills."
+    },
+    {
+      "type": "gesture",
+      "atSec": 423.8,
+      "target": "host",
+      "kind": "point"
+    },
+    {
+      "type": "line",
+      "fromSec": 451.0,
+      "toSec": 470.0,
+      "speaker": "friend1",
+      "text": "So the website isn't downloaded. Just the skill. Like ordering a cookbook and not receiving the entire restaurant."
+    },
+    {
+      "type": "line",
+      "fromSec": 471.0,
+      "toSec": 485.0,
+      "speaker": "friend2",
+      "text": "And if it's already installed?"
+    },
+    {
+      "type": "line",
+      "fromSec": 486.0,
+      "toSec": 520.0,
+      "speaker": "ops",
+      "text": "Then it says it's up to date. Or it upgrades: backs up the old folder, installs the new one, and rolls back if anything fails."
+    },
+    {
+      "type": "line",
+      "fromSec": 521.0,
+      "toSec": 545.0,
+      "speaker": "host",
+      "text": "Flags exist for power users: FORCE=1 to repair, KEEP_BACKUP=1 to keep the .bak folder. Normal people: just rerun the command."
+    },
+    {
+      "type": "line",
+      "fromSec": 546.0,
+      "toSec": 570.0,
+      "speaker": "friend1",
+      "text": "Normal people also rerun commands. We just call it 'turning it off and on again'."
+    },
+    {
+      "type": "gesture",
+      "atSec": 570.0,
+      "target": "friend1",
+      "kind": "wave"
+    },
+    {
+      "type": "line",
+      "fromSec": 571.0,
+      "toSec": 604.0,
+      "speaker": "host",
+      "text": "On the website, we simulate real terminal output: success, Codex missing, not initialized, custom CODEX_HOME, update available."
+    },
+    {
+      "type": "line",
+      "fromSec": 605.0,
+      "toSec": 632.0,
+      "speaker": "ops",
+      "text": "And we match the real scripts exactly. If the demo lies, I personally will file an issue against the demo."
+    },
+    {
+      "type": "line",
+      "fromSec": 633.0,
+      "toSec": 660.0,
+      "speaker": "friend2",
+      "text": "Speaking of issues: support is just GitHub Issues, right? No email chain that starts with 'per my last message'."
+    },
+    {
+      "type": "line",
+      "fromSec": 661.0,
+      "toSec": 694.0,
+      "speaker": "host",
+      "text": "Exactly. Public skill repo for issues and releases. Website repo can be private. The site links always point to the public one."
+    },
+    {
+      "type": "line",
+      "fromSec": 695.0,
+      "toSec": 718.0,
+      "speaker": "friend1",
+      "text": "So the docs are public, the source is private, and my mistakes are forever. Cool."
+    },
+    {
+      "type": "line",
+      "fromSec": 722.0,
+      "toSec": 748.0,
+      "speaker": "host",
+      "text": "Now, the part that makes maintainers nervous: a streaming-style player embedded in every generated site."
+    },
+    {
+      "type": "gesture",
+      "atSec": 722.4,
+      "target": "host",
+      "kind": "nod"
+    },
+    {
+      "type": "line",
+      "fromSec": 749.0,
+      "toSec": 777.0,
+      "speaker": "ops",
+      "text": "Not affiliated with any streaming service. No trademarks. No borrowed sounds. Only vibes."
+    },
+    {
+      "type": "line",
+      "fromSec": 778.0,
+      "toSec": 806.0,
+      "speaker": "friend2",
+      "text": "Vibes are legally distinct from branding. It's like saying: 'I didn't copy it, I just arrived at the same idea wearing a different hat.'"
+    },
+    {
+      "type": "line",
+      "fromSec": 807.0,
+      "toSec": 836.0,
+      "speaker": "host",
+      "text": "The episode is pre-generated and shipped as static files: mp3, script.json, and captions in nine languages."
+    },
+    {
+      "type": "line",
+      "fromSec": 837.0,
+      "toSec": 860.0,
+      "speaker": "ops",
+      "text": "No runtime voice API calls. No exposed keys. That key you pasted into chat? Rotate it. I'm not kidding."
+    },
+    {
+      "type": "gesture",
+      "atSec": 860.0,
+      "target": "ops",
+      "kind": "point"
+    },
+    {
+      "type": "line",
+      "fromSec": 861.0,
+      "toSec": 888.0,
+      "speaker": "friend1",
+      "text": "And if credits run out, we don't panic. The site keeps playing the existing episode. Comedy is cached."
+    },
+    {
+      "type": "line",
+      "fromSec": 889.0,
+      "toSec": 918.0,
+      "speaker": "host",
+      "text": "Want rewatch? Hit Play once, and the service worker caches /show/* so it can replay smoothly even on flaky networks."
+    },
+    {
+      "type": "line",
+      "fromSec": 919.0,
+      "toSec": 944.0,
+      "speaker": "friend2",
+      "text": "A service worker is basically a bouncer for your bandwidth. 'You're on the list. Go in. No new downloads tonight.'"
+    },
+    {
+      "type": "line",
+      "fromSec": 945.0,
+      "toSec": 970.0,
+      "speaker": "ops",
+      "text": "We even support Range requests from cache, so scrubbing works offline. I wrote that line so I could feel something."
+    },
+    {
+      "type": "gesture",
+      "atSec": 945.2,
+      "target": "ops",
+      "kind": "nod"
+    },
+    {
+      "type": "line",
+      "fromSec": 971.0,
+      "toSec": 1002.0,
+      "speaker": "host",
+      "text": "And for people who hate magic: there's a Save offline button. It downloads and pins the episode in browser storage."
+    },
+    {
+      "type": "line",
+      "fromSec": 1003.0,
+      "toSec": 1032.0,
+      "speaker": "friend1",
+      "text": "So the show is installed like a skill: you watch it once, and it quietly lives in your house forever."
+    },
+    {
+      "type": "line",
+      "fromSec": 1033.0,
+      "toSec": 1062.0,
+      "speaker": "host",
+      "text": "Exactly. And when you publish your own skill site, you can swap in your own pilot. New cast. New jokes. Same template."
+    },
+    {
+      "type": "gesture",
+      "atSec": 1033.8,
+      "target": "host",
+      "kind": "wave"
+    },
+    {
+      "type": "line",
+      "fromSec": 1063.0,
+      "toSec": 1080.0,
+      "speaker": "ops",
+      "text": "Please keep the jokes original. If I see 'Season 1: The API Key', I'm calling legal."
+    },
+    {
+      "type": "line",
+      "fromSec": 1082.0,
+      "toSec": 1106.0,
+      "speaker": "friend2",
+      "text": "So the skill makes a website, the website installs the skill, and the skill can publish itself. Does the universe collapse?"
+    },
+    {
+      "type": "line",
+      "fromSec": 1107.0,
+      "toSec": 1130.0,
+      "speaker": "host",
+      "text": "Only if you forget to bump VERSION. Then time itself refuses to move forward."
+    },
+    {
+      "type": "gesture",
+      "atSec": 1107.2,
+      "target": "host",
+      "kind": "shrug"
+    },
+    {
+      "type": "line",
+      "fromSec": 1131.0,
+      "toSec": 1156.0,
+      "speaker": "ops",
+      "text": "And if you do bump it, you tag a release with the same number. VERSION equals tag equals release. We keep reality consistent."
+    },
+    {
+      "type": "gesture",
+      "atSec": 1151.0,
+      "target": "ops",
+      "kind": "nod"
+    },
+    {
+      "type": "line",
+      "fromSec": 1157.0,
+      "toSec": 1184.0,
+      "speaker": "friend1",
+      "text": "Meanwhile, the installer reads that VERSION and upgrades me automatically. So I'm basically a package manager with feelings."
+    },
+    {
+      "type": "line",
+      "fromSec": 1185.0,
+      "toSec": 1200.0,
+      "speaker": "host",
+      "text": "You're all package managers with feelings. That's the whole show."
+    },
+    {
+      "type": "line",
+      "fromSec": 1202.0,
+      "toSec": 1230.0,
+      "speaker": "host",
+      "text": "Back on stage: if you're new, here's the pitch. Choose a skill folder. Press publish. You get a site, installers, docs, and deploy previews."
+    },
+    {
+      "type": "line",
+      "fromSec": 1231.0,
+      "toSec": 1256.0,
+      "speaker": "friend1",
+      "text": "Deploy previews from PRs. The only kind of preview that has ever improved my self-esteem."
+    },
+    {
+      "type": "laugh",
+      "atSec": 1256.0,
+      "intensity": 0.55
+    },
+    {
+      "type": "line",
+      "fromSec": 1257.0,
+      "toSec": 1286.0,
+      "speaker": "ops",
+      "text": "And when the installer refuses, it's not being rude. It's protecting you from installing into nowhere. Run Codex once. Then rerun."
+    },
+    {
+      "type": "line",
+      "fromSec": 1287.0,
+      "toSec": 1310.0,
+      "speaker": "host",
+      "text": "Good night. Tip your maintainers. And may your auth.json always exist where you think it is."
+    },
+    {
+      "type": "line",
+      "fromSec": 1310.0,
+      "toSec": 1318.0,
+      "speaker": "host",
+      "text": "End credits: made with templates, not trademarks."
+    },
+    {
+      "type": "laugh",
+      "atSec": 1310.0,
+      "intensity": 0.65
+    },
+    {
+      "type": "gesture",
+      "atSec": 1316.0,
+      "target": "host",
+      "kind": "wave"
+    },
+    {
+      "type": "line",
+      "fromSec": 1318.0,
+      "toSec": 1320.0,
+      "speaker": "host",
+      "text": "Thanks for watching."
     }
   ]
 }

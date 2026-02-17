@@ -4,25 +4,175 @@ WEBVTT
 Willkommen bei SkillStream Originals.
 
 00:00:07.000 --> 00:00:13.500
-Heute Abend: eine Skill, die eine Website baut, um deine Skills zu veroffentlichen. Skillception.
+Heute Abend: ein Skill, der eine Website baut, um deine Skills zu veröffentlichen. Skillception.
 
 00:00:14.000 --> 00:00:20.500
-Das ist keine Magie. Das ist eine Checkliste. Also im Grunde Magie fur Erwachsene.
+Das ist keine Magie. Das ist eine Checkliste. Und Checklisten sind im Grunde Magie für Erwachsene.
 
 00:00:23.000 --> 00:00:28.500
-Du willst mir sagen, die Skill liefert eine Show... uber die Skill mit?
+Du willst mir sagen, der Skill liefert eine Show... über den Skill?
 
 00:00:29.000 --> 00:00:34.000
-Exakt. Es ist Dokumentation, aber mit einem Budget von zwei Polygonen.
+Genau. Das ist Dokumentation, aber mit einem Budget von zwei Polygonen.
 
 00:00:36.000 --> 00:00:43.000
-Solange der Installer nicht lauft, wenn Codex nicht initialisiert ist, kann ich schlafen.
+Solange der Installer sich weigert zu laufen, wenn Codex nicht initialisiert ist, schlafe ich ruhig.
 
 00:00:44.000 --> 00:00:50.000
 Und Updates? Bitte sag mir, Updates sind langweilig und sicher.
 
 00:00:50.400 --> 00:00:56.500
-VERSION plus Tags. Backups beim Upgrade. Der Nervenkitzel ist unvergleichlich.
+VERSION plus Tags. Backups beim Upgrade. Der Nervenkitzel ist unerreicht.
 
-00:00:58.000 --> 00:01:06.000
-Das ist ein Platzhalter-Pilot-Audio. Maintainer konnen die volle Episode offline neu erzeugen.
+00:00:58.000 --> 00:01:14.000
+Für die öffentliche Seite: keine Voice-API-Aufrufe zur Laufzeit. Du kannst diese Episode wiederholen, ohne irgendjemandes Credits zu verbrennen.
+
+00:01:15.000 --> 00:01:33.000
+Also: Du veröffentlichst einen Skill, und der Skill veröffentlicht den Skill-Publisher. Das wirkt in drei Gerichtsbarkeiten illegal.
+
+00:01:34.000 --> 00:01:52.000
+Entspann dich. Es sind zwei Repos. Eins öffentlich für den Skill-Ordner. Eins meist privat für den Website-Quellcode, öffentlich deployed.
+
+00:01:53.000 --> 00:02:10.000
+Privates Repo, öffentliche Seite. Wie eine Küche. Du musst meine Schränke nicht sehen, um die Suppe zu schmecken.
+
+00:02:11.000 --> 00:02:27.000
+Ist die Suppe SemVer-gewürzt? Ich esse nur Versionen mit drei Zahlen.
+
+00:02:28.000 --> 00:02:50.000
+Ja: SemVer, Keep a Changelog und ein Secret-Scan, damit du nicht aus Versehen eine .env und deine Würde veröffentlichst.
+
+00:02:51.000 --> 00:03:10.000
+Wenn du einen API-Key in einen Chat einfügst, gilt er als kompromittiert. Rotier ihn. Diskutiere nicht mit dem Roboter.
+
+00:03:11.000 --> 00:03:34.000
+Wir geben dir sogar einen kurzen Installer: curl auf /install.sh oder iwr auf /install.ps1. Derselbe Befehl aktualisiert später.
+
+00:03:35.000 --> 00:03:55.000
+Ein One-Liner, der sich selbst aktualisiert. Endlich eine Beziehung, in der sich jemand wirklich ändert, wenn er es verspricht.
+
+00:04:02.000 --> 00:04:25.000
+Okay, ich bin dabei. Aber erklär mir CODEX_HOME, als wäre ich fünf und mein Terminal würde mich verurteilen.
+
+00:04:26.000 --> 00:04:52.000
+CODEX_HOME ist einfach der Ordner, den Codex für Skills und Auth nutzt. Standard: ~/.codex auf macOS oder %USERPROFILE%\.codex auf Windows.
+
+00:04:53.000 --> 00:05:15.000
+Und wenn du ihn verschoben hast? Setz CODEX_HOME. Sonst weigert sich der Installer und gibt dir höflich die Schuld.
+
+00:05:16.000 --> 00:05:40.000
+Installer, die höflich ablehnen, sind meine Love Language. 'Fehler: du bist nicht bereit für eine Bindung.'
+
+00:05:41.000 --> 00:06:10.000
+Die Gate-Prüfung checkt vier Dinge: der Ordner existiert, skills/ existiert, auth.json existiert und das eingebaute Installer-Skript existiert.
+
+00:06:11.000 --> 00:06:35.000
+Das Letzte ist mein Favorit. 'Ich kann keine Skills installieren, solange ich nicht beweisen kann, dass du Skills installieren kannst.'
+
+00:06:36.000 --> 00:07:02.000
+Das ist keine Rekursion. Das ist Sicherheit. Und: Es verhindert, dass du in irgendeinen zufälligen Ordner installierst, den du nie benutzen wirst.
+
+00:07:03.000 --> 00:07:30.000
+Wenn es durch ist, lädt es das ZIP des öffentlichen Skill-Repos herunter, entpackt es und kopiert nur den Skill-Ordner nach CODEX_HOME/skills.
+
+00:07:31.000 --> 00:07:50.000
+Also wird die Website nicht heruntergeladen. Nur der Skill. Wie ein Kochbuch bestellen und nicht das ganze Restaurant bekommen.
+
+00:07:51.000 --> 00:08:05.000
+Und wenn es schon installiert ist?
+
+00:08:06.000 --> 00:08:40.000
+Dann sagt es: aktuell. Oder es updatet: sichert den alten Ordner, installiert den neuen und rollt zurück, wenn etwas schiefgeht.
+
+00:08:41.000 --> 00:09:05.000
+Es gibt Flags für Power-User: FORCE=1 zum Reparieren, KEEP_BACKUP=1 um den .bak-Ordner zu behalten. Normale Menschen: einfach den Befehl nochmal ausführen.
+
+00:09:06.000 --> 00:09:30.000
+Normale Menschen führen auch Befehle nochmal aus. Wir nennen das 'aus- und wieder einschalten'.
+
+00:09:31.000 --> 00:10:04.000
+Auf der Website simulieren wir echte Terminal-Ausgabe: Erfolg, Codex fehlt, nicht initialisiert, eigenes CODEX_HOME, Update verfügbar.
+
+00:10:05.000 --> 00:10:32.000
+Und wir matchen die echten Skripte exakt. Wenn die Demo lügt, erstelle ich persönlich ein Issue gegen die Demo.
+
+00:10:33.000 --> 00:11:00.000
+Apropos Issues: Support ist einfach GitHub Issues, oder? Keine E-Mail-Kette, die mit 'wie in meiner letzten Nachricht' anfängt.
+
+00:11:01.000 --> 00:11:34.000
+Genau. Öffentliches Skill-Repo für Issues und Releases. Website-Repo kann privat sein. Die Links der Seite zeigen immer auf das öffentliche.
+
+00:11:35.000 --> 00:11:58.000
+Also sind die Docs öffentlich, der Source privat und meine Fehler für immer. Super.
+
+00:12:02.000 --> 00:12:28.000
+Jetzt der Teil, der Maintainer nervös macht: ein Streaming-Player, eingebettet in jede generierte Seite.
+
+00:12:29.000 --> 00:12:57.000
+Keine Verbindung zu irgendeinem Streaming-Dienst. Keine Marken. Keine geliehenen Sounds. Nur Vibes.
+
+00:12:58.000 --> 00:13:26.000
+Vibes sind rechtlich etwas anderes als Branding. So wie: 'Ich hab's nicht kopiert, ich bin nur mit einem anderen Hut zur selben Idee gekommen.'
+
+00:13:27.000 --> 00:13:56.000
+Die Episode wird vorab generiert und als statische Dateien ausgeliefert: mp3, script.json und Untertitel in neun Sprachen.
+
+00:13:57.000 --> 00:14:20.000
+Keine Voice-API-Aufrufe zur Laufzeit. Keine offengelegten Keys. Den Key, den du in den Chat gepostet hast? Rotier ihn. Ich meine es ernst.
+
+00:14:21.000 --> 00:14:48.000
+Und wenn die Credits leer sind, geraten wir nicht in Panik. Die Seite spielt einfach die bestehende Episode weiter. Comedy ist gecached.
+
+00:14:49.000 --> 00:15:18.000
+Nochmal ansehen? Einmal Play drücken, dann cached der Service Worker /show/*, damit es auch bei wackligen Netzen flüssig läuft.
+
+00:15:19.000 --> 00:15:44.000
+Ein Service Worker ist im Grunde der Türsteher deiner Bandbreite. 'Du stehst auf der Liste. Rein. Heute keine neuen Downloads.'
+
+00:15:45.000 --> 00:16:10.000
+Wir unterstützen sogar Range-Requests aus dem Cache, damit Scrubbing offline funktioniert. Ich habe diesen Satz geschrieben, um etwas zu fühlen.
+
+00:16:11.000 --> 00:16:42.000
+Und für Leute, die Magie hassen: ein 'Save offline'-Button. Er lädt die Episode herunter und pinnt sie im Browser-Speicher.
+
+00:16:43.000 --> 00:17:12.000
+Also ist die Show installiert wie ein Skill: du schaust sie einmal, und sie wohnt still für immer bei dir.
+
+00:17:13.000 --> 00:17:42.000
+Genau. Und wenn du deine eigene Skill-Site veröffentlichst, kannst du deinen eigenen Pilot austauschen. Neue Crew. Neue Witze. Gleiche Vorlage.
+
+00:17:43.000 --> 00:18:00.000
+Bitte halt die Witze originell. Wenn ich 'Staffel 1: Der API-Key' sehe, rufe ich Legal.
+
+00:18:02.000 --> 00:18:26.000
+Also: Der Skill baut eine Website, die Website installiert den Skill, und der Skill kann sich selbst veröffentlichen. Bricht das Universum zusammen?
+
+00:18:27.000 --> 00:18:50.000
+Nur wenn du vergisst, VERSION zu bumpen. Dann weigert sich die Zeit selbst, weiterzugehen.
+
+00:18:51.000 --> 00:19:16.000
+Und wenn du es tust, taggst du ein Release mit derselben Nummer. VERSION gleich Tag gleich Release. Wir halten die Realität konsistent.
+
+00:19:17.000 --> 00:19:44.000
+Und währenddessen liest der Installer diese VERSION und upgradet mich automatisch. Ich bin also im Grunde ein Package Manager mit Gefühlen.
+
+00:19:45.000 --> 00:20:00.000
+Ihr seid alle Package Manager mit Gefühlen. Das ist die ganze Show.
+
+00:20:02.000 --> 00:20:30.000
+Zurück auf die Bühne: Wenn du neu bist, hier der Pitch. Skill-Ordner auswählen. Publish drücken. Du bekommst eine Site, Installer, Docs und Deploy Previews.
+
+00:20:31.000 --> 00:20:56.000
+Deploy Previews aus PRs. Die einzige Art von Preview, die jemals mein Selbstwertgefühl verbessert hat.
+
+00:20:57.000 --> 00:21:26.000
+Und wenn der Installer sich weigert, ist er nicht unhöflich. Er schützt dich davor, ins Nichts zu installieren. Codex einmal starten. Dann nochmal.
+
+00:21:27.000 --> 00:21:50.000
+Gute Nacht. Gebt euren Maintainers ein Trinkgeld. Und möge deine auth.json immer dort sein, wo du glaubst, dass sie ist.
+
+00:21:50.000 --> 00:21:58.000
+Abspann: gemacht mit Templates, nicht mit Marken.
+
+00:21:58.000 --> 00:22:00.000
+Danke fürs Zuschauen.

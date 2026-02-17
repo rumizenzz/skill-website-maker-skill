@@ -97,6 +97,10 @@ export const zh = {
       exit_fullscreen: "退出全屏",
       volume: "音量",
       audience_mode: "观众模式",
+      save_offline: "离线保存",
+      saving_offline: "正在保存...",
+      saved_offline: "已保存",
+      save_offline_retry: "重试",
       continue_title: "继续观看？",
       continue_body: "从上次位置继续播放。",
       start_over: "从头开始",
@@ -208,4 +212,3 @@ export const zh = {
     blurb: "为 Codex 技能分发而构建。网站源码仓库可私有；技能仓库为公开。",
   },
 } as const;
-

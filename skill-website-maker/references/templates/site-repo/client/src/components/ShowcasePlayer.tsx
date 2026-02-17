@@ -47,6 +47,7 @@ export function ShowcasePlayer() {
     lastLaughIdx: number;
   } | null>(null);
   const laughIdxRef = useRef<number>(0);
+  const offlinePrefetchRef = useRef<Promise<void> | null>(null);
 
   const [script, setScript] = useState<PilotScript | null>(null);
   const [scriptError, setScriptError] = useState<string | null>(null);
@@ -54,6 +55,7 @@ export function ShowcasePlayer() {
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
+  const [offlineState, setOfflineState] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
   const [captionsEnabled, setCaptionsEnabled] = useState<boolean>(() => localStorage.getItem(storageKey("cc")) === "1");
   const [captionLang, setCaptionLang] = useState<string>(() => localStorage.getItem(storageKey("ccLang")) || baseLang());
@@ -277,6 +279,38 @@ export function ShowcasePlayer() {
     setReady(true);
   };
 
+  const prefetchOffline = async () => {
+    if (!("caches" in window)) return;
+    try {
+      setOfflineState((s) => (s === "saved" ? s : "saving"));
+      const cache = await caches.open("swm-site:show:v1");
+      const urls = [pilotV1.audioSrc, pilotV1.posterSrc, pilotV1.scriptSrc, ...pilotV1.captions.map((c) => c.src)];
+      for (const url of urls) {
+        const key = new Request(url, { method: "GET" });
+        const existing = await cache.match(key);
+        if (existing) continue;
+        const res = await fetch(url);
+        if (res && res.ok) await cache.put(key, res.clone());
+      }
+      try {
+        // Best-effort: ask the browser to persist storage so offline assets are less likely to be evicted.
+        await navigator.storage?.persist?.();
+      } catch {
+        // ignore
+      }
+      setOfflineState("saved");
+    } catch {
+      setOfflineState("error");
+    }
+  };
+
+  const ensureOfflinePrefetch = () => {
+    if (offlinePrefetchRef.current) return;
+    offlinePrefetchRef.current = prefetchOffline().finally(() => {
+      offlinePrefetchRef.current = null;
+    });
+  };
+
   const ensureAudienceAudio = () => {
     if (audienceRef.current) return;
     const Ctx =
@@ -328,6 +362,8 @@ export function ShowcasePlayer() {
       // Safe: called only after user interaction (Play click).
       ensureAudienceAudio();
     }
+    // Best-effort: cache large show assets after the first user interaction so rewatching is instant.
+    ensureOfflinePrefetch();
     if (typeof opts?.from === "number") {
       v.currentTime = Math.max(0, opts.from);
     }
@@ -667,6 +703,26 @@ export function ShowcasePlayer() {
                   onClick={toggleAudienceMode}
                 >
                   {t("show.controls.audience_mode")}
+                </button>
+
+                <button
+                  type="button"
+                  className={cn(
+                    "inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold border border-white/10",
+                    offlineState === "saved" ? "bg-emerald-300/15 border-emerald-300/25" : "bg-white/10",
+                    offlineState === "saving" ? "opacity-80 cursor-wait" : "hover:bg-white/15",
+                    "transition-colors",
+                  )}
+                  onClick={() => ensureOfflinePrefetch()}
+                  disabled={offlineState === "saving" || offlineState === "saved"}
+                >
+                  {offlineState === "saving"
+                    ? t("show.controls.saving_offline")
+                    : offlineState === "saved"
+                      ? t("show.controls.saved_offline")
+                      : offlineState === "error"
+                        ? t("show.controls.save_offline_retry")
+                        : t("show.controls.save_offline")}
                 </button>
               </div>
 

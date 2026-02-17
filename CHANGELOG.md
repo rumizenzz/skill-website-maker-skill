@@ -6,6 +6,17 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-02-17
+### Added
+- Site template: offline "Save offline" option for the Pilot section using a service worker cache, including best-effort Range support for scrubbing.
+
+### Changed
+- Site template: upgraded Stage3D character animation (walk cycle, blinks, expressions) for a more lively full-episode experience.
+
+### Fixed
+- Site template: Pilot captions now ship translated in all 9 languages.
+- Maintainer tooling: `translate_captions.py` now supports UTF-8 BOM in `pilot_v1.script.json`.
+
 ## [1.1.0] - 2026-02-17
 ### Added
 - Site template: full i18n with 9 languages enabled (en, es, fr, de, pt, ja, ko, zh, ar), including RTL for Arabic.

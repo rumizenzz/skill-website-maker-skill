@@ -7,16 +7,16 @@ Welcome to SkillStream Originals.
 Tonight: a skill that builds a website to publish your skills. Skillception.
 
 00:00:14.000 --> 00:00:20.500
-Its not magic. Its a checklist. Which is basically magic for adults.
+It's not magic. It's a checklist. Which is basically magic for adults.
 
 00:00:23.000 --> 00:00:28.500
-So you are telling me the skill ships a show... about the skill?
+So you're telling me the skill ships a show... about the skill?
 
 00:00:29.000 --> 00:00:34.000
-Exactly. Its documentation, but with a budget of two polygons.
+Exactly. It's documentation, but with a budget of two polygons.
 
 00:00:36.000 --> 00:00:43.000
-As long as the installer refuses to run if Codex is not initialized. I sleep.
+As long as the installer refuses to run if Codex is not initialized, I sleep.
 
 00:00:44.000 --> 00:00:50.000
 And updates? Please tell me updates are boring and safe.
@@ -24,5 +24,155 @@ And updates? Please tell me updates are boring and safe.
 00:00:50.400 --> 00:00:56.500
 VERSION plus tags. Backups on upgrade. The thrill is unmatched.
 
-00:00:58.000 --> 00:01:06.000
-This is a placeholder pilot audio. Maintainers can regenerate the full episode offline.
+00:00:58.000 --> 00:01:14.000
+For the public site: no runtime voice API calls. You can replay this episode without spending anyone's credits.
+
+00:01:15.000 --> 00:01:33.000
+So it's like: you publish a skill, and the skill publishes the skill publisher. That feels illegal in three jurisdictions.
+
+00:01:34.000 --> 00:01:52.000
+Relax. It's two repos. One public for the skill folder. One usually private for the website source, deployed publicly.
+
+00:01:53.000 --> 00:02:10.000
+Private repo, public site. Like a kitchen. You don't need to see my cabinets to taste the soup.
+
+00:02:11.000 --> 00:02:27.000
+Is the soup SemVer flavored? Because I only eat versions with three numbers.
+
+00:02:28.000 --> 00:02:50.000
+Yes: SemVer, Keep a Changelog, and a secret scan so you don't accidentally publish a .env and your dignity.
+
+00:02:51.000 --> 00:03:10.000
+If you paste an API key into chat, it's considered compromised. Rotate it. Do not argue with the robot.
+
+00:03:11.000 --> 00:03:34.000
+We even give you a short installer: curl to /install.sh or iwr to /install.ps1. Same command updates later.
+
+00:03:35.000 --> 00:03:55.000
+A one-liner that updates itself. Finally, a relationship where someone actually changes when they promise.
+
+00:04:02.000 --> 00:04:25.000
+Okay, I'm in. But explain CODEX_HOME like I'm five and my terminal is judging me.
+
+00:04:26.000 --> 00:04:52.000
+CODEX_HOME is just the folder Codex uses for skills and auth. Default is ~/.codex on macOS or %USERPROFILE%\.codex on Windows.
+
+00:04:53.000 --> 00:05:15.000
+And if you moved it? Set CODEX_HOME. Otherwise the installer will refuse and politely blame you.
+
+00:05:16.000 --> 00:05:40.000
+Installers refusing politely is my love language. 'Error: you're not ready for commitment.'
+
+00:05:41.000 --> 00:06:10.000
+The gate checks four things: the folder exists, skills/ exists, auth.json exists, and the built-in installer script exists.
+
+00:06:11.000 --> 00:06:35.000
+That last one is my favorite. 'I can't install skills unless I can prove you know how to install skills.'
+
+00:06:36.000 --> 00:07:02.000
+It's not recursion. It's safety. Also: it prevents installing into a random folder you'll never use.
+
+00:07:03.000 --> 00:07:30.000
+Once it passes, it downloads the public skill repo zip, extracts, and copies only the skill folder into CODEX_HOME/skills.
+
+00:07:31.000 --> 00:07:50.000
+So the website isn't downloaded. Just the skill. Like ordering a cookbook and not receiving the entire restaurant.
+
+00:07:51.000 --> 00:08:05.000
+And if it's already installed?
+
+00:08:06.000 --> 00:08:40.000
+Then it says it's up to date. Or it upgrades: backs up the old folder, installs the new one, and rolls back if anything fails.
+
+00:08:41.000 --> 00:09:05.000
+Flags exist for power users: FORCE=1 to repair, KEEP_BACKUP=1 to keep the .bak folder. Normal people: just rerun the command.
+
+00:09:06.000 --> 00:09:30.000
+Normal people also rerun commands. We just call it 'turning it off and on again'.
+
+00:09:31.000 --> 00:10:04.000
+On the website, we simulate real terminal output: success, Codex missing, not initialized, custom CODEX_HOME, update available.
+
+00:10:05.000 --> 00:10:32.000
+And we match the real scripts exactly. If the demo lies, I personally will file an issue against the demo.
+
+00:10:33.000 --> 00:11:00.000
+Speaking of issues: support is just GitHub Issues, right? No email chain that starts with 'per my last message'.
+
+00:11:01.000 --> 00:11:34.000
+Exactly. Public skill repo for issues and releases. Website repo can be private. The site links always point to the public one.
+
+00:11:35.000 --> 00:11:58.000
+So the docs are public, the source is private, and my mistakes are forever. Cool.
+
+00:12:02.000 --> 00:12:28.000
+Now, the part that makes maintainers nervous: a streaming-style player embedded in every generated site.
+
+00:12:29.000 --> 00:12:57.000
+Not affiliated with any streaming service. No trademarks. No borrowed sounds. Only vibes.
+
+00:12:58.000 --> 00:13:26.000
+Vibes are legally distinct from branding. It's like saying: 'I didn't copy it, I just arrived at the same idea wearing a different hat.'
+
+00:13:27.000 --> 00:13:56.000
+The episode is pre-generated and shipped as static files: mp3, script.json, and captions in nine languages.
+
+00:13:57.000 --> 00:14:20.000
+No runtime voice API calls. No exposed keys. That key you pasted into chat? Rotate it. I'm not kidding.
+
+00:14:21.000 --> 00:14:48.000
+And if credits run out, we don't panic. The site keeps playing the existing episode. Comedy is cached.
+
+00:14:49.000 --> 00:15:18.000
+Want rewatch? Hit Play once, and the service worker caches /show/* so it can replay smoothly even on flaky networks.
+
+00:15:19.000 --> 00:15:44.000
+A service worker is basically a bouncer for your bandwidth. 'You're on the list. Go in. No new downloads tonight.'
+
+00:15:45.000 --> 00:16:10.000
+We even support Range requests from cache, so scrubbing works offline. I wrote that line so I could feel something.
+
+00:16:11.000 --> 00:16:42.000
+And for people who hate magic: there's a Save offline button. It downloads and pins the episode in browser storage.
+
+00:16:43.000 --> 00:17:12.000
+So the show is installed like a skill: you watch it once, and it quietly lives in your house forever.
+
+00:17:13.000 --> 00:17:42.000
+Exactly. And when you publish your own skill site, you can swap in your own pilot. New cast. New jokes. Same template.
+
+00:17:43.000 --> 00:18:00.000
+Please keep the jokes original. If I see 'Season 1: The API Key', I'm calling legal.
+
+00:18:02.000 --> 00:18:26.000
+So the skill makes a website, the website installs the skill, and the skill can publish itself. Does the universe collapse?
+
+00:18:27.000 --> 00:18:50.000
+Only if you forget to bump VERSION. Then time itself refuses to move forward.
+
+00:18:51.000 --> 00:19:16.000
+And if you do bump it, you tag a release with the same number. VERSION equals tag equals release. We keep reality consistent.
+
+00:19:17.000 --> 00:19:44.000
+Meanwhile, the installer reads that VERSION and upgrades me automatically. So I'm basically a package manager with feelings.
+
+00:19:45.000 --> 00:20:00.000
+You're all package managers with feelings. That's the whole show.
+
+00:20:02.000 --> 00:20:30.000
+Back on stage: if you're new, here's the pitch. Choose a skill folder. Press publish. You get a site, installers, docs, and deploy previews.
+
+00:20:31.000 --> 00:20:56.000
+Deploy previews from PRs. The only kind of preview that has ever improved my self-esteem.
+
+00:20:57.000 --> 00:21:26.000
+And when the installer refuses, it's not being rude. It's protecting you from installing into nowhere. Run Codex once. Then rerun.
+
+00:21:27.000 --> 00:21:50.000
+Good night. Tip your maintainers. And may your auth.json always exist where you think it is.
+
+00:21:50.000 --> 00:21:58.000
+End credits: made with templates, not trademarks.
+
+00:21:58.000 --> 00:22:00.000
+Thanks for watching.

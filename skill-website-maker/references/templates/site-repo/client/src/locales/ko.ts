@@ -99,6 +99,10 @@ export const ko = {
       exit_fullscreen: "전체 화면 종료",
       volume: "볼륨",
       audience_mode: "관객 모드",
+      save_offline: "오프라인 저장",
+      saving_offline: "저장 중...",
+      saved_offline: "저장됨",
+      save_offline_retry: "다시 시도",
       continue_title: "계속 시청할까요?",
       continue_body: "마지막 위치에서 재개합니다.",
       start_over: "처음부터",
@@ -211,4 +215,3 @@ export const ko = {
       "Codex 스킬 배포를 위해 제작되었습니다. 웹사이트 소스 저장소는 비공개일 수 있고, 스킬 저장소는 공개입니다.",
   },
 } as const;
-

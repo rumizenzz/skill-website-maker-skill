@@ -1,28 +1,178 @@
 WEBVTT
 
 00:00:02.000 --> 00:00:06.500
-Bienvenido a SkillStream Originals.
+Bienvenidos a SkillStream Originals.
 
 00:00:07.000 --> 00:00:13.500
-Esta noche: una skill que crea un sitio para publicar tus skills. Skillception.
+Esta noche: una skill que crea un sitio web para publicar tus skills. Skillcepción.
 
 00:00:14.000 --> 00:00:20.500
-No es magia. Es una lista de verificacion. Que basicamente es magia para adultos.
+No es magia. Es una lista de verificación. Que básicamente es magia para adultos.
 
 00:00:23.000 --> 00:00:28.500
-O sea que la skill incluye un show... sobre la skill?
+¿Así que me estás diciendo que la skill lanza un show... sobre la skill?
 
 00:00:29.000 --> 00:00:34.000
-Exacto. Es documentacion, pero con un presupuesto de dos poligonos.
+Exacto. Es documentación, pero con un presupuesto de dos polígonos.
 
 00:00:36.000 --> 00:00:43.000
-Mientras el instalador se niegue a correr si Codex no esta inicializado, yo duermo.
+Mientras el instalador se niegue a ejecutarse si Codex no está inicializado, yo duermo.
 
 00:00:44.000 --> 00:00:50.000
-Y las actualizaciones? Por favor dime que son aburridas y seguras.
+¿Y las actualizaciones? Dime que las actualizaciones son aburridas y seguras.
 
 00:00:50.400 --> 00:00:56.500
-VERSION mas tags. Backups al actualizar. La emocion es inigualable.
+VERSION más tags. Respaldos al actualizar. La emoción es incomparable.
 
-00:00:58.000 --> 00:01:06.000
-Este audio del piloto es de ejemplo. Los mantenedores pueden regenerar el episodio completo sin conexion.
+00:00:58.000 --> 00:01:14.000
+Para el sitio público: cero llamadas a APIs de voz en tiempo real. Puedes repetir este episodio sin gastar los créditos de nadie.
+
+00:01:15.000 --> 00:01:33.000
+O sea: publicas una skill, y la skill publica a la skill que publica skills. Eso suena ilegal en tres jurisdicciones.
+
+00:01:34.000 --> 00:01:52.000
+Tranquilo. Son dos repos. Uno público para la carpeta del skill. Uno normalmente privado para el código del sitio web, desplegado públicamente.
+
+00:01:53.000 --> 00:02:10.000
+Repo privado, sitio público. Como una cocina. No necesitas ver mis gabinetes para probar la sopa.
+
+00:02:11.000 --> 00:02:27.000
+¿Y la sopa tiene sabor a SemVer? Porque yo solo como versiones con tres números.
+
+00:02:28.000 --> 00:02:50.000
+Sí: SemVer, Keep a Changelog y un escaneo de secretos para que no publiques por accidente un .env y tu dignidad.
+
+00:02:51.000 --> 00:03:10.000
+Si pegas una API key en un chat, se considera comprometida. Rótala. No discutas con el robot.
+
+00:03:11.000 --> 00:03:34.000
+Incluso te damos un instalador corto: curl a /install.sh o iwr a /install.ps1. El mismo comando actualiza después.
+
+00:03:35.000 --> 00:03:55.000
+Una sola línea que se actualiza sola. Por fin, una relación donde alguien cambia cuando lo promete.
+
+00:04:02.000 --> 00:04:25.000
+Ok, me convenciste. Pero explícame CODEX_HOME como si tuviera cinco años y mi terminal me estuviera juzgando.
+
+00:04:26.000 --> 00:04:52.000
+CODEX_HOME es solo la carpeta que Codex usa para skills y auth. Por defecto es ~/.codex en macOS o %USERPROFILE%\.codex en Windows.
+
+00:04:53.000 --> 00:05:15.000
+¿Y si la moviste? Configura CODEX_HOME. Si no, el instalador se negará y te culpará educadamente.
+
+00:05:16.000 --> 00:05:40.000
+Que los instaladores se nieguen con educación es mi lenguaje del amor. 'Error: no estás listo para el compromiso.'
+
+00:05:41.000 --> 00:06:10.000
+La compuerta revisa cuatro cosas: que exista la carpeta, que exista skills/, que exista auth.json y que exista el script instalador integrado.
+
+00:06:11.000 --> 00:06:35.000
+Esa última es mi favorita. 'No puedo instalar skills a menos que pueda demostrar que sabes instalar skills.'
+
+00:06:36.000 --> 00:07:02.000
+No es recursión. Es seguridad. Además: evita instalar en una carpeta aleatoria que nunca vas a usar.
+
+00:07:03.000 --> 00:07:30.000
+Cuando pasa, descarga el zip del repo público del skill, lo extrae y copia solo la carpeta del skill a CODEX_HOME/skills.
+
+00:07:31.000 --> 00:07:50.000
+Así que el sitio web no se descarga. Solo la skill. Como pedir un libro de recetas y no recibir el restaurante completo.
+
+00:07:51.000 --> 00:08:05.000
+¿Y si ya está instalada?
+
+00:08:06.000 --> 00:08:40.000
+Entonces dice que está al día. O actualiza: respalda la carpeta vieja, instala la nueva y revierte si algo falla.
+
+00:08:41.000 --> 00:09:05.000
+Hay flags para usuarios avanzados: FORCE=1 para reparar, KEEP_BACKUP=1 para conservar la carpeta .bak. Gente normal: solo vuelve a ejecutar el comando.
+
+00:09:06.000 --> 00:09:30.000
+La gente normal también vuelve a ejecutar comandos. Solo le decimos 'apágalo y enciéndelo de nuevo'.
+
+00:09:31.000 --> 00:10:04.000
+En el sitio simulamos salida real de terminal: éxito, Codex ausente, no inicializado, CODEX_HOME personalizado, actualización disponible.
+
+00:10:05.000 --> 00:10:32.000
+Y coincidimos con los scripts reales al 100%. Si la demo miente, yo personalmente abriré un issue contra la demo.
+
+00:10:33.000 --> 00:11:00.000
+Hablando de issues: el soporte es solo GitHub Issues, ¿no? Sin cadena de emails que empieza con 'como dije en mi último mensaje'.
+
+00:11:01.000 --> 00:11:34.000
+Exacto. Repo público del skill para issues y releases. El repo del sitio puede ser privado. Los enlaces del sitio siempre apuntan al público.
+
+00:11:35.000 --> 00:11:58.000
+O sea, los docs son públicos, el código es privado y mis errores son para siempre. Genial.
+
+00:12:02.000 --> 00:12:28.000
+Ahora, la parte que pone nerviosos a los maintainers: un reproductor estilo streaming incrustado en cada sitio generado.
+
+00:12:29.000 --> 00:12:57.000
+No estamos afiliados a ningún servicio de streaming. Sin marcas registradas. Sin sonidos prestados. Solo vibra.
+
+00:12:58.000 --> 00:13:26.000
+La vibra es legalmente distinta del branding. Es como decir: 'No lo copié, solo llegué a la misma idea con otro sombrero'.
+
+00:13:27.000 --> 00:13:56.000
+El episodio se pre-genera y se publica como archivos estáticos: mp3, script.json y captions en nueve idiomas.
+
+00:13:57.000 --> 00:14:20.000
+Sin llamadas a APIs de voz en tiempo real. Sin keys expuestas. ¿Esa key que pegaste en el chat? Rótala. En serio.
+
+00:14:21.000 --> 00:14:48.000
+Y si se acaban los créditos, no entramos en pánico. El sitio sigue reproduciendo el episodio existente. La comedia está en caché.
+
+00:14:49.000 --> 00:15:18.000
+¿Quieres rewatch? Dale Play una vez y el service worker cachea /show/* para que se repita fluido incluso con redes inestables.
+
+00:15:19.000 --> 00:15:44.000
+Un service worker es básicamente un portero de tu ancho de banda. 'Estás en la lista. Pasa. Hoy no hay descargas nuevas'.
+
+00:15:45.000 --> 00:16:10.000
+Incluso soportamos solicitudes Range desde caché, para que el scrubbing funcione offline. Escribí esa línea para sentir algo.
+
+00:16:11.000 --> 00:16:42.000
+Y para quien odia la magia: hay un botón de Guardar offline. Descarga y fija el episodio en el almacenamiento del navegador.
+
+00:16:43.000 --> 00:17:12.000
+Así que el show se instala como una skill: lo ves una vez y se queda viviendo en tu casa para siempre.
+
+00:17:13.000 --> 00:17:42.000
+Exacto. Y cuando publiques tu propio sitio de skill, puedes cambiar el piloto. Nuevo elenco. Nuevos chistes. La misma plantilla.
+
+00:17:43.000 --> 00:18:00.000
+Por favor, mantén los chistes originales. Si veo 'Temporada 1: La API Key', llamo a legal.
+
+00:18:02.000 --> 00:18:26.000
+Entonces la skill crea un sitio, el sitio instala la skill y la skill puede publicarse a sí misma. ¿Se colapsa el universo?
+
+00:18:27.000 --> 00:18:50.000
+Solo si te olvidas de subir VERSION. Entonces el tiempo mismo se niega a avanzar.
+
+00:18:51.000 --> 00:19:16.000
+Y si sí la subes, etiquetas un release con el mismo número. VERSION igual tag igual release. Mantenemos la realidad consistente.
+
+00:19:17.000 --> 00:19:44.000
+Mientras tanto, el instalador lee esa VERSION y me actualiza automáticamente. Así que básicamente soy un package manager con sentimientos.
+
+00:19:45.000 --> 00:20:00.000
+Todos son package managers con sentimientos. Ese es todo el show.
+
+00:20:02.000 --> 00:20:30.000
+De vuelta al escenario: si eres nuevo, aquí va el pitch. Elige una carpeta de skill. Pulsa publish. Obtienes un sitio, instaladores, docs y deploy previews.
+
+00:20:31.000 --> 00:20:56.000
+Deploy previews desde PRs. El único tipo de preview que alguna vez mejoró mi autoestima.
+
+00:20:57.000 --> 00:21:26.000
+Y cuando el instalador se niega, no es grosero. Te protege de instalar en la nada. Ejecuta Codex una vez. Luego vuelve a intentarlo.
+
+00:21:27.000 --> 00:21:50.000
+Buenas noches. Dejen propina a sus maintainers. Y que tu auth.json siempre exista donde crees que está.
+
+00:21:50.000 --> 00:21:58.000
+Créditos finales: hecho con plantillas, no con marcas.
+
+00:21:58.000 --> 00:22:00.000
+Gracias por vernos.

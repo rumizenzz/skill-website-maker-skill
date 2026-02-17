@@ -21,7 +21,8 @@ def format_ts(sec: float) -> str:
 
 
 def load_spec(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+    # Windows editors often add a UTF-8 BOM; json.loads will choke unless we strip it.
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def main(argv: list[str]) -> int:
@@ -71,4 +72,3 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(__import__("sys").argv[1:]))
-
