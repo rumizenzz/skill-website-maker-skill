@@ -68,23 +68,23 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
             >
-              Releases
+              {t("hero.ctas.releases")}
               <ExternalLink className="h-4 w-4" />
             </a>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
             <div className="swm-card rounded-2xl p-4">
-              <div className="text-sm font-semibold">Hard gate</div>
+              <div className="text-sm font-semibold">{t("hero.cards.hard_gate_title")}</div>
               <div className="text-sm swm-muted mt-1">{t("hero.bullets.hard_gate")}</div>
             </div>
             <div className="swm-card rounded-2xl p-4">
-              <div className="text-sm font-semibold">Updates</div>
+              <div className="text-sm font-semibold">{t("hero.cards.updates_title")}</div>
               <div className="text-sm swm-muted mt-1">{t("hero.bullets.updates")}</div>
             </div>
             <div className="swm-card rounded-2xl p-4">
-              <div className="text-sm font-semibold">Simple</div>
-              <div className="text-sm swm-muted mt-1">Copy. Paste. Done.</div>
+              <div className="text-sm font-semibold">{t("hero.cards.simple_title")}</div>
+              <div className="text-sm swm-muted mt-1">{t("hero.cards.simple_body")}</div>
             </div>
           </div>
         </motion.div>
@@ -96,39 +96,29 @@ export function Hero() {
           transition={{ duration: 0.65, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="swm-card rounded-3xl p-5 md:p-6">
-            <div className="text-sm swm-muted">What happens when you run the installer</div>
+            <div className="text-sm swm-muted">{t("hero.how.title")}</div>
             <div className="mt-4 space-y-3 text-sm">
               <div className="flex gap-3">
                 <div className="mt-1 h-2 w-2 rounded-full bg-emerald-300/80" />
-                <div>
-                  Checks Codex is initialized on disk (<code>CODEX_HOME</code> + <code>auth.json</code>).
-                </div>
+                <div>{t("hero.how.steps.one")}</div>
               </div>
               <div className="flex gap-3">
                 <div className="mt-1 h-2 w-2 rounded-full bg-blue-300/80" />
-                <div>
-                  Reads the latest version from <code>VERSION</code> in the public skill repo.
-                </div>
+                <div>{t("hero.how.steps.two")}</div>
               </div>
               <div className="flex gap-3">
                 <div className="mt-1 h-2 w-2 rounded-full bg-amber-300/80" />
-                <div>
-                  Downloads the matching tagged release zip and installs into <code>CODEX_HOME/skills</code>.
-                </div>
+                <div>{t("hero.how.steps.three")}</div>
               </div>
               <div className="flex gap-3">
                 <div className="mt-1 h-2 w-2 rounded-full bg-white/60" />
-                <div>
-                  If already installed: upgrades safely with a backup folder (<code>KEEP_BACKUP=1</code> to keep it).
-                </div>
+                <div>{t("hero.how.steps.four")}</div>
               </div>
             </div>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-black/40 p-4">
-              <div className="text-xs swm-muted">Next</div>
-              <div className="mt-2 text-sm">
-                Scroll to <span className="font-semibold">Quickstart</span> and run the one-liner.
-              </div>
+              <div className="text-xs swm-muted">{t("hero.how.next_title")}</div>
+              <div className="mt-2 text-sm">{t("hero.how.next_body")}</div>
             </div>
           </div>
         </motion.div>

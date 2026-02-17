@@ -27,11 +27,33 @@ def is_text_file(path: Path) -> bool:
 
 
 def copy_dir(src: Path, dst: Path) -> None:
+    # Templates may be developed locally, and those working trees can contain
+    # build artifacts. Never copy heavy or generated directories into the
+    # rendered repos.
+    skip_names = {"node_modules", "dist", ".git", ".netlify", ".playwright-cli", "output"}
     dst.mkdir(parents=True, exist_ok=True)
     for p in src.iterdir():
+        if p.name in skip_names:
+            continue
         out = dst / p.name
         if p.is_dir():
-            shutil.copytree(p, out, dirs_exist_ok=True)
+            shutil.copytree(
+                p,
+                out,
+                dirs_exist_ok=True,
+                ignore=shutil.ignore_patterns(
+                    "__pycache__",
+                    "*.pyc",
+                    "*.pyo",
+                    ".DS_Store",
+                    "Thumbs.db",
+                    "node_modules",
+                    "dist",
+                    ".netlify",
+                    ".playwright-cli",
+                    "output",
+                ),
+            )
         else:
             shutil.copy2(p, out)
 

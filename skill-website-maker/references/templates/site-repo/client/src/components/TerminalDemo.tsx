@@ -281,7 +281,7 @@ export function TerminalDemo(props: { os: Os }) {
       </div>
 
       <div className="swm-card rounded-3xl p-4 md:p-5">
-        <div className="text-xs swm-muted">Output</div>
+        <div className="text-xs swm-muted">{t("demo.output_label")}</div>
         <div
           ref={outRef}
           className="mt-3 h-72 overflow-auto rounded-2xl border border-white/10 bg-black/50 p-4 font-mono text-sm whitespace-pre-wrap"
@@ -293,9 +293,7 @@ export function TerminalDemo(props: { os: Os }) {
           ) : null}
         </div>
 
-        <div className="mt-3 text-xs swm-muted">
-          Scenarios are a front-end simulation. Real output comes from <code>/install.sh</code> and <code>/install.ps1</code>.
-        </div>
+        <div className="mt-3 text-xs swm-muted">{t("demo.note")}</div>
       </div>
     </div>
   );

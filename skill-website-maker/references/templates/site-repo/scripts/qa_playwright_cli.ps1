@@ -33,6 +33,11 @@ try {
   Invoke-PwCli resize 1366 768
   Invoke-PwCli screenshot --filename "output/playwright/home-desktop.png" --full-page
 
+  # Header nav: What -> Watch -> FAQ
+  Invoke-PwCli run-code "(page) => page.getByRole('button', { name: 'What it does' }).first().click()"
+  Invoke-PwCli run-code "(page) => page.waitForTimeout(400)"
+  Invoke-PwCli screenshot --filename "output/playwright/what-desktop.png" --full-page
+
   Invoke-PwCli run-code "(page) => page.getByRole('button', { name: 'Quickstart' }).first().click()"
   Invoke-PwCli run-code "(page) => page.waitForTimeout(600)"
   Invoke-PwCli screenshot --filename "output/playwright/quickstart-desktop.png" --full-page
@@ -47,6 +52,26 @@ try {
   Invoke-PwCli run-code "(page) => page.locator('#demo').getByRole('button', { name: 'Play' }).click()"
   Invoke-PwCli run-code "(page) => page.waitForTimeout(1200)"
   Invoke-PwCli screenshot --filename "output/playwright/demo-update.png" --full-page
+
+  # Show player: verify lazy audio load
+  Invoke-PwCli run-code "(page) => page.getByRole('button', { name: 'Watch' }).first().click()"
+  Invoke-PwCli run-code "(page) => page.waitForTimeout(600)"
+  Invoke-PwCli run-code "(page) => page.evaluate(() => { const v=document.querySelector('video'); if(!v) throw new Error('video not found'); if(v.getAttribute('src')) throw new Error('expected video src to be empty before Play'); })"
+  Invoke-PwCli screenshot --filename "output/playwright/show-before-play.png" --full-page
+
+  Invoke-PwCli run-code "(page) => page.locator('#show').getByRole('button', { name: 'Play' }).first().click()"
+  Invoke-PwCli run-code "(page) => page.waitForTimeout(1200)"
+  Invoke-PwCli run-code "(page) => page.evaluate(() => { const v=document.querySelector('video'); if(!v) throw new Error('video not found'); if(!v.getAttribute('src')) throw new Error('expected video src after Play'); if(v.currentTime <= 0) throw new Error('expected video to start playing'); })"
+  Invoke-PwCli run-code "(page) => page.locator('#show').getByRole('button', { name: 'Skip intro' }).first().click()"
+  Invoke-PwCli run-code "(page) => page.waitForTimeout(300)"
+  Invoke-PwCli run-code "(page) => page.evaluate(() => { const v=document.querySelector('video'); if(!v) throw new Error('video not found'); if(v.currentTime < 25) throw new Error('expected skip intro jump'); })"
+  Invoke-PwCli screenshot --filename "output/playwright/show-after-play.png" --full-page
+
+  # i18n: switch to Arabic and verify RTL
+  Invoke-PwCli run-code "(page) => page.locator('header select').first().selectOption('ar')"
+  Invoke-PwCli run-code "(page) => page.waitForTimeout(600)"
+  Invoke-PwCli run-code "(page) => page.evaluate(() => { if(document.documentElement.dir !== 'rtl') throw new Error('expected dir=rtl'); })"
+  Invoke-PwCli screenshot --filename "output/playwright/home-ar-rtl.png" --full-page
 
   Invoke-PwCli resize 390 844
   Invoke-PwCli goto "http://localhost:4173"

@@ -25,7 +25,7 @@ from lib.workspace import (
 )
 
 
-TOOL_VERSION = "1.0.1"
+TOOL_VERSION = "1.1.0"
 
 
 def eprint(msg: str) -> None:

@@ -1,0 +1,167 @@
+{
+  "id": "pilot-v1",
+  "title": "Pilot: Skillception",
+  "intro_end_sec": 32.0,
+  "cast": [
+    { "id": "host", "display_name": "Mara", "color": "#7CF7D4" },
+    { "id": "friend1", "display_name": "Dez", "color": "#6EA8FF" },
+    { "id": "friend2", "display_name": "Rune", "color": "#FFC38A" },
+    { "id": "ops", "display_name": "Ivy", "color": "#E6E6E6" }
+  ],
+  "lines": [
+    {
+      "from_sec": 2.0,
+      "to_sec": 6.5,
+      "speaker": "host",
+      "text": "Welcome to SkillStream Originals.",
+      "t": {
+        "es": "Bienvenido a SkillStream Originals.",
+        "fr": "Bienvenue sur SkillStream Originals.",
+        "de": "Willkommen bei SkillStream Originals.",
+        "pt": "Bem-vindo a SkillStream Originals.",
+        "ja": "SkillStream Originals へようこそ。",
+        "ko": "SkillStream Originals에 오신 것을 환영합니다.",
+        "zh": "欢迎来到 SkillStream Originals。",
+        "ar": "اهلا بك في SkillStream Originals."
+      }
+    },
+    {
+      "from_sec": 7.0,
+      "to_sec": 13.5,
+      "speaker": "host",
+      "text": "Tonight: a skill that builds a website to publish your skills. Skillception.",
+      "t": {
+        "es": "Esta noche: una skill que crea un sitio para publicar tus skills. Skillception.",
+        "fr": "Ce soir: une skill qui construit un site pour publier tes skills. Skillception.",
+        "de": "Heute Abend: eine Skill, die eine Website baut, um deine Skills zu veroffentlichen. Skillception.",
+        "pt": "Hoje a noite: uma skill que cria um site para publicar suas skills. Skillception.",
+        "ja": "今夜は: スキルを公開するためのサイトを作るスキル。Skillception。",
+        "ko": "오늘은: 스킬을 공개할 웹사이트를 만드는 스킬. Skillception.",
+        "zh": "今晚: 一个为发布技能而搭建网站的技能。Skillception。",
+        "ar": "الليلة: مهارة تبني موقعا لنشر مهاراتك. Skillception."
+      }
+    },
+    {
+      "from_sec": 14.0,
+      "to_sec": 20.5,
+      "speaker": "host",
+      "text": "Its not magic. Its a checklist. Which is basically magic for adults.",
+      "t": {
+        "es": "No es magia. Es una lista de verificacion. Que basicamente es magia para adultos.",
+        "fr": "Ce nest pas de la magie. Cest une checklist. Ce qui est en gros de la magie pour adultes.",
+        "de": "Das ist keine Magie. Das ist eine Checkliste. Also im Grunde Magie fur Erwachsene.",
+        "pt": "Nao e magia. E uma lista de verificacao. O que basicamente e magia para adultos.",
+        "ja": "魔法じゃない。チェックリストだ。つまり大人向けの魔法。",
+        "ko": "마법이 아니에요. 체크리스트죠. 결국 어른을 위한 마법이에요.",
+        "zh": "这不是魔法。这是清单。基本上就是成年人的魔法。",
+        "ar": "ليست سحرا. انها قائمة تحقق. وهي سحر للبالغين."
+      }
+    },
+    {
+      "from_sec": 23.0,
+      "to_sec": 28.5,
+      "speaker": "friend1",
+      "text": "So you are telling me the skill ships a show... about the skill?",
+      "t": {
+        "es": "O sea que la skill incluye un show... sobre la skill?",
+        "fr": "Donc tu me dis que la skill embarque un show... a propos de la skill?",
+        "de": "Du willst mir sagen, die Skill liefert eine Show... uber die Skill mit?",
+        "pt": "Entao voce esta dizendo que a skill vem com um show... sobre a skill?",
+        "ja": "つまりそのスキルが、スキルについての番組まで同梱するってこと?",
+        "ko": "그러니까 그 스킬이, 스킬에 대한 쇼까지 포함한다는 거예요?",
+        "zh": "所以你是说，这个技能还附带一档节目... 讲这个技能？",
+        "ar": "يعني تقول ان المهارة تشحن عرضا... عن المهارة؟"
+      }
+    },
+    {
+      "from_sec": 29.0,
+      "to_sec": 34.0,
+      "speaker": "host",
+      "text": "Exactly. Its documentation, but with a budget of two polygons.",
+      "t": {
+        "es": "Exacto. Es documentacion, pero con un presupuesto de dos poligonos.",
+        "fr": "Exactement. Cest de la doc, mais avec un budget de deux polygones.",
+        "de": "Exakt. Es ist Dokumentation, aber mit einem Budget von zwei Polygonen.",
+        "pt": "Exato. E documentacao, mas com um orcamento de dois poligonos.",
+        "ja": "その通り。ドキュメントだけど、予算はポリゴン2枚。",
+        "ko": "맞아요. 문서인데, 예산은 폴리곤 두 장이에요.",
+        "zh": "没错。这是文档，但预算只有两个多边形。",
+        "ar": "بالضبط. انها توثيق، لكن بميزانية بوليغونين."
+      }
+    },
+    {
+      "from_sec": 36.0,
+      "to_sec": 43.0,
+      "speaker": "ops",
+      "text": "As long as the installer refuses to run if Codex is not initialized. I sleep.",
+      "t": {
+        "es": "Mientras el instalador se niegue a correr si Codex no esta inicializado, yo duermo.",
+        "fr": "Tant que linstalleur refuse si Codex nest pas initialise, je dors.",
+        "de": "Solange der Installer nicht lauft, wenn Codex nicht initialisiert ist, kann ich schlafen.",
+        "pt": "Desde que o instalador recuse se o Codex nao estiver inicializado, eu durmo.",
+        "ja": "Codex が初期化されてないとインストーラが拒否するなら…私は眠れる。",
+        "ko": "Codex가 초기화되지 않았으면 설치기가 거부한다면... 전 잠 잘 수 있어요.",
+        "zh": "只要安装器在 Codex 未初始化时拒绝运行，我就能安心睡觉。",
+        "ar": "طالما ان المثبت يرفض اذا لم يكن Codex مهيأ... انا انام."
+      }
+    },
+    {
+      "from_sec": 44.0,
+      "to_sec": 50.0,
+      "speaker": "friend2",
+      "text": "And updates? Please tell me updates are boring and safe.",
+      "t": {
+        "es": "Y las actualizaciones? Por favor dime que son aburridas y seguras.",
+        "fr": "Et les mises a jour? Dis-moi quelles sont ennuyeuses et sures.",
+        "de": "Und Updates? Bitte sag mir, Updates sind langweilig und sicher.",
+        "pt": "E as atualizacoes? Por favor diga que sao entediantes e seguras.",
+        "ja": "アップデートは? 退屈で安全だって言って。",
+        "ko": "업데이트는요? 제발 지루하고 안전하다고 말해줘요.",
+        "zh": "那更新呢？拜托告诉我更新是无聊又安全的。",
+        "ar": "وماذا عن التحديثات؟ ارجوك قل انها مملة وامنة."
+      }
+    },
+    {
+      "from_sec": 50.4,
+      "to_sec": 56.5,
+      "speaker": "host",
+      "text": "VERSION plus tags. Backups on upgrade. The thrill is unmatched.",
+      "t": {
+        "es": "VERSION mas tags. Backups al actualizar. La emocion es inigualable.",
+        "fr": "VERSION plus tags. Backups lors de la mise a niveau. Le frisson est inegale.",
+        "de": "VERSION plus Tags. Backups beim Upgrade. Der Nervenkitzel ist unvergleichlich.",
+        "pt": "VERSION mais tags. Backups ao atualizar. A emocao e incomparavel.",
+        "ja": "VERSION とタグ。アップグレード時はバックアップ。スリルが違う。",
+        "ko": "VERSION과 태그요. 업그레이드할 때 백업. 스릴이 남달라요.",
+        "zh": "VERSION 加标签。升级时备份。刺激无与伦比。",
+        "ar": "VERSION مع tags. نسخ احتياطية عند الترقية. حماس لا يضاهى."
+      }
+    },
+    {
+      "from_sec": 58.0,
+      "to_sec": 66.0,
+      "speaker": "host",
+      "text": "This is a placeholder pilot audio. Maintainers can regenerate the full episode offline.",
+      "t": {
+        "es": "Este audio del piloto es de ejemplo. Los mantenedores pueden regenerar el episodio completo sin conexion.",
+        "fr": "Ceci est un audio pilote de demonstration. Les mainteneurs peuvent regenerer lepisode complet hors ligne.",
+        "de": "Das ist ein Platzhalter-Pilot-Audio. Maintainer konnen die volle Episode offline neu erzeugen.",
+        "pt": "Este audio do piloto e um exemplo. Mantenedores podem regenerar o episodio completo offline.",
+        "ja": "これはプレースホルダー音声です。管理者はオフラインで完全版を再生成できます。",
+        "ko": "이건 플레이스홀더 파일이에요. 관리자는 오프라인으로 전체 에피소드를 다시 생성할 수 있어요.",
+        "zh": "这是占位的试播音频。维护者可以离线重新生成完整剧集。",
+        "ar": "هذا صوت تجريبي مؤقت. يمكن للمشرفين اعادة توليد الحلقة الكاملة دون اتصال."
+      }
+    }
+  ],
+  "stage_events": [
+    { "type": "gesture", "at_sec": 4.8, "target": "host", "kind": "wave" },
+    { "type": "laugh", "at_sec": 13.6, "intensity": 0.6 },
+    { "type": "laugh", "at_sec": 20.6, "intensity": 0.8 },
+    { "type": "gesture", "at_sec": 24.2, "target": "friend1", "kind": "point" },
+    { "type": "laugh", "at_sec": 34.1, "intensity": 0.7 },
+    { "type": "gesture", "at_sec": 38.5, "target": "ops", "kind": "nod" },
+    { "type": "laugh", "at_sec": 56.6, "intensity": 0.5 }
+  ]
+}
+

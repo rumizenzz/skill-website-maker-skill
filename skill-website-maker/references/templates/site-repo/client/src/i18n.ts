@@ -2,6 +2,14 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import { en } from "./locales/en";
+import { ar } from "./locales/ar";
+import { de } from "./locales/de";
+import { es } from "./locales/es";
+import { fr } from "./locales/fr";
+import { ja } from "./locales/ja";
+import { ko } from "./locales/ko";
+import { pt } from "./locales/pt";
+import { zh } from "./locales/zh";
 
 export type Language = {
   code: string;
@@ -14,14 +22,14 @@ const STORAGE_KEY = "language";
 
 export const LANGUAGES: Language[] = [
   { code: "en", label: "English", dir: "ltr", enabled: true },
-  { code: "es", label: "Espanol", dir: "ltr", enabled: false },
-  { code: "fr", label: "Francais", dir: "ltr", enabled: false },
-  { code: "de", label: "Deutsch", dir: "ltr", enabled: false },
-  { code: "pt", label: "Portugues", dir: "ltr", enabled: false },
-  { code: "ja", label: "Japanese", dir: "ltr", enabled: false },
-  { code: "ko", label: "Korean", dir: "ltr", enabled: false },
-  { code: "zh", label: "Chinese", dir: "ltr", enabled: false },
-  { code: "ar", label: "Arabic", dir: "rtl", enabled: false },
+  { code: "es", label: "Español", dir: "ltr", enabled: true },
+  { code: "fr", label: "Français", dir: "ltr", enabled: true },
+  { code: "de", label: "Deutsch", dir: "ltr", enabled: true },
+  { code: "pt", label: "Português", dir: "ltr", enabled: true },
+  { code: "ja", label: "日本語", dir: "ltr", enabled: true },
+  { code: "ko", label: "한국어", dir: "ltr", enabled: true },
+  { code: "zh", label: "中文", dir: "ltr", enabled: true },
+  { code: "ar", label: "العربية", dir: "rtl", enabled: true },
 ];
 
 function getLanguageMeta(code: string): Language | undefined {
@@ -50,7 +58,17 @@ function applyDocumentLang(code: string) {
 }
 
 i18n.use(initReactI18next).init({
-  resources: { en: { translation: en } },
+  resources: {
+    en: { translation: en },
+    es: { translation: es },
+    fr: { translation: fr },
+    de: { translation: de },
+    pt: { translation: pt },
+    ja: { translation: ja },
+    ko: { translation: ko },
+    zh: { translation: zh },
+    ar: { translation: ar },
+  },
   lng: getInitialLanguage(),
   fallbackLng: "en",
   interpolation: { escapeValue: false },
@@ -65,4 +83,3 @@ i18n.on("languageChanged", (lng) => {
 });
 
 export default i18n;
-

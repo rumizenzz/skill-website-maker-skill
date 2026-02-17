@@ -27,22 +27,16 @@ export function Documentation() {
 
         <div>
           <div className="text-xl font-semibold">{t("docs.sections.install")}</div>
-          <div className="mt-3 text-sm swm-muted">
-            Go to <code>#quickstart</code>, copy the one-liner, and run it in your terminal.
-          </div>
+          <div className="mt-3 text-sm swm-muted">{t("docs.install.body1")}</div>
           <div className="mt-2 text-sm swm-muted">
-            When it finishes: restart Codex and run <code>/{siteConfig.skillSlug}</code>.
+            {t("docs.install.body2").replace("__SKILL_SLUG__", siteConfig.skillSlug)}
           </div>
         </div>
 
         <div>
           <div className="text-xl font-semibold">{t("docs.sections.update")}</div>
-          <div className="mt-3 text-sm swm-muted">
-            Re-run the same one-liner any time. The installer reads <code>VERSION</code> from the public skill repo and upgrades if needed.
-          </div>
-          <div className="mt-2 text-sm swm-muted">
-            If you want to repair a broken install, set <code>FORCE=1</code> and run it again. If you want to keep backups, set <code>KEEP_BACKUP=1</code>.
-          </div>
+          <div className="mt-3 text-sm swm-muted">{t("docs.update.body1")}</div>
+          <div className="mt-2 text-sm swm-muted">{t("docs.update.body2")}</div>
         </div>
 
         <div>
@@ -53,4 +47,3 @@ export function Documentation() {
     </div>
   );
 }
-

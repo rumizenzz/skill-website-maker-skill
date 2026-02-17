@@ -13,6 +13,12 @@ This repository is the private website source for the Codex skill `__SKILL_SLUG_
   - `/install.ps1` (Windows PowerShell)
 - Shows realistic terminal demo output for common install scenarios
 - Renders the skill changelog locally from `/changelog.md` (synced by GitHub Actions)
+- Includes an original "streaming-style" Pilot section (`SkillStream Originals`) with a 3D animated stage and caption tracks
+
+Notes:
+- This template is not affiliated with any streaming service. The branding, UI, audio, and characters are original.
+- The public site does not call ElevenLabs (or any voice API) at runtime. Audio is shipped as static assets.
+- Maintainers can regenerate pilot assets offline: see `scripts/pilot/README.md`.
 
 ## Netlify (GitHub Integration + PR Deploy Previews)
 
@@ -42,4 +48,3 @@ Build:
 ```bash
 pnpm build
 ```
-

@@ -31,6 +31,11 @@ Defaults (you can override):
 Website requirements:
 - The website repo is private, but the deployed Netlify site is public.
 - PRs create Netlify Deploy Previews (Netlify GitHub integration).
+- The generated site template ships with:
+  - full i18n: 9 languages enabled (en, es, fr, de, pt, ja, ko, zh, ar) with RTL for Arabic
+  - an original "SkillStream Originals" Pilot section (3D animated stage + captions)
+  - no Netflix branding/assets and no celebrity impersonation
+  - no runtime ElevenLabs calls (audio is pre-generated and served as static files)
 
 ## Safety Rules (Non-Negotiable)
 
@@ -40,6 +45,7 @@ Website requirements:
   - pushing to `main`
   - creating tags/releases
   - changing repo visibility
+- Never commit API keys to repos. If an API key was pasted into chat logs, treat it as compromised and rotate it.
 
 ## Start Here (Copy/Paste Prompts)
 

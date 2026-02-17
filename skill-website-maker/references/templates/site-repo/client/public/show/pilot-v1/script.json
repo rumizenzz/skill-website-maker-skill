@@ -1,0 +1,137 @@
+{
+  "version": "pilot-v1",
+  "introEndSec": 32.0,
+  "characters": [
+    {
+      "id": "host",
+      "displayName": "Mara",
+      "color": "#7CF7D4"
+    },
+    {
+      "id": "friend1",
+      "displayName": "Dez",
+      "color": "#6EA8FF"
+    },
+    {
+      "id": "friend2",
+      "displayName": "Rune",
+      "color": "#FFC38A"
+    },
+    {
+      "id": "ops",
+      "displayName": "Ivy",
+      "color": "#E6E6E6"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "stage",
+      "fromSec": 0,
+      "toSec": 1320.0,
+      "camera": "wide"
+    }
+  ],
+  "events": [
+    {
+      "type": "line",
+      "fromSec": 2.0,
+      "toSec": 6.5,
+      "speaker": "host",
+      "text": "Welcome to SkillStream Originals."
+    },
+    {
+      "type": "gesture",
+      "atSec": 4.8,
+      "target": "host",
+      "kind": "wave"
+    },
+    {
+      "type": "line",
+      "fromSec": 7.0,
+      "toSec": 13.5,
+      "speaker": "host",
+      "text": "Tonight: a skill that builds a website to publish your skills. Skillception."
+    },
+    {
+      "type": "laugh",
+      "atSec": 13.6,
+      "intensity": 0.6
+    },
+    {
+      "type": "line",
+      "fromSec": 14.0,
+      "toSec": 20.5,
+      "speaker": "host",
+      "text": "Its not magic. Its a checklist. Which is basically magic for adults."
+    },
+    {
+      "type": "laugh",
+      "atSec": 20.6,
+      "intensity": 0.8
+    },
+    {
+      "type": "line",
+      "fromSec": 23.0,
+      "toSec": 28.5,
+      "speaker": "friend1",
+      "text": "So you are telling me the skill ships a show... about the skill?"
+    },
+    {
+      "type": "gesture",
+      "atSec": 24.2,
+      "target": "friend1",
+      "kind": "point"
+    },
+    {
+      "type": "line",
+      "fromSec": 29.0,
+      "toSec": 34.0,
+      "speaker": "host",
+      "text": "Exactly. Its documentation, but with a budget of two polygons."
+    },
+    {
+      "type": "laugh",
+      "atSec": 34.1,
+      "intensity": 0.7
+    },
+    {
+      "type": "line",
+      "fromSec": 36.0,
+      "toSec": 43.0,
+      "speaker": "ops",
+      "text": "As long as the installer refuses to run if Codex is not initialized. I sleep."
+    },
+    {
+      "type": "gesture",
+      "atSec": 38.5,
+      "target": "ops",
+      "kind": "nod"
+    },
+    {
+      "type": "line",
+      "fromSec": 44.0,
+      "toSec": 50.0,
+      "speaker": "friend2",
+      "text": "And updates? Please tell me updates are boring and safe."
+    },
+    {
+      "type": "line",
+      "fromSec": 50.4,
+      "toSec": 56.5,
+      "speaker": "host",
+      "text": "VERSION plus tags. Backups on upgrade. The thrill is unmatched."
+    },
+    {
+      "type": "laugh",
+      "atSec": 56.6,
+      "intensity": 0.5
+    },
+    {
+      "type": "line",
+      "fromSec": 58.0,
+      "toSec": 66.0,
+      "speaker": "host",
+      "text": "This is a placeholder pilot audio. Maintainers can regenerate the full episode offline."
+    }
+  ]
+}

@@ -31,3 +31,14 @@ In Codex, run:
 - Source of truth: `skill-website-maker/VERSION`
 - Release tag names match VERSION exactly (example: `1.0.0`).
 
+## What It Generates (Quick Summary)
+
+Skill Website Maker publishes any Codex skill as:
+1. A public skill-only repo (what installers download)
+2. A private website source repo deployed publicly (Netlify) that hosts `/install.sh` and `/install.ps1`
+
+The generated site template ships with:
+- Full i18n: 9 languages enabled (including RTL for Arabic)
+- An original "SkillStream Originals" Pilot section (3D animated stage + captions)
+- No runtime ElevenLabs calls (audio is served as static assets; maintainers can regenerate offline)
+

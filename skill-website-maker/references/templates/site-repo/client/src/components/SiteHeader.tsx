@@ -32,11 +32,18 @@ export function SiteHeader() {
             <div className="font-semibold tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               {siteConfig.skillDisplayName}
             </div>
-            <div className="text-xs swm-muted">Codex skill installer</div>
+            <div className="text-xs swm-muted">{t("site.tagline")}</div>
           </div>
         </button>
 
         <nav className="hidden md:flex items-center gap-1">
+          <button
+            type="button"
+            className="rounded-xl px-3 py-2 text-sm hover:bg-white/5"
+            onClick={() => scrollToId("what", !!reduceMotion)}
+          >
+            {t("nav.what")}
+          </button>
           <button
             type="button"
             className="rounded-xl px-3 py-2 text-sm hover:bg-white/5"
@@ -47,9 +54,23 @@ export function SiteHeader() {
           <button
             type="button"
             className="rounded-xl px-3 py-2 text-sm hover:bg-white/5"
+            onClick={() => scrollToId("show", !!reduceMotion)}
+          >
+            {t("nav.watch")}
+          </button>
+          <button
+            type="button"
+            className="rounded-xl px-3 py-2 text-sm hover:bg-white/5"
             onClick={() => scrollToId("demo", !!reduceMotion)}
           >
             {t("nav.demo")}
+          </button>
+          <button
+            type="button"
+            className="rounded-xl px-3 py-2 text-sm hover:bg-white/5"
+            onClick={() => scrollToId("faq", !!reduceMotion)}
+          >
+            {t("nav.faq")}
           </button>
           <button
             type="button"
@@ -87,4 +108,3 @@ export function SiteHeader() {
     </header>
   );
 }
-
