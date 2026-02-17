@@ -1,0 +1,36 @@
+name: Sync Skill Changelog
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download skill changelog + version
+        run: |
+          mkdir -p client/public
+          curl -fsSL "https://raw.githubusercontent.com/__GITHUB_OWNER__/__SKILL_REPO__/main/CHANGELOG.md" -o client/public/changelog.md
+          curl -fsSL "https://raw.githubusercontent.com/__GITHUB_OWNER__/__SKILL_REPO__/main/__SKILL_SLUG__/VERSION" -o client/public/skill-version.txt
+
+      - name: Commit and push (if changed)
+        run: |
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add client/public/changelog.md client/public/skill-version.txt
+          git commit -m "chore: sync skill changelog and version"
+          git push
+

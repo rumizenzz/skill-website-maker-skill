@@ -1,6 +1,6 @@
-# Skill Website Maker (Codex Skill)
+# __SKILL_DISPLAY_NAME__ (Codex Skill)
 
-This is the **skill-only** repository for the Codex skill `skill-website-maker`.
+This is the **skill-only** repository for the Codex skill `__SKILL_SLUG__`.
 
 It is intended to be installed into your Codex skills folder (not run as a standalone app).
 
@@ -17,17 +17,17 @@ Manual install (advanced):
 1. Locate your Codex home folder:
    - macOS: `~/.codex` (or `CODEX_HOME`)
    - Windows: `%USERPROFILE%\\.codex` (or `CODEX_HOME`)
-2. Copy the folder `skill-website-maker/` into:
-   - `<CODEX_HOME>/skills/skill-website-maker/`
+2. Copy the folder `__SKILL_SLUG__/` into:
+   - `<CODEX_HOME>/skills/__SKILL_SLUG__/`
 3. Restart Codex.
 
 ## Use
 
 In Codex, run:
-- `/skill-website-maker`
+- `/__SKILL_SLUG__`
 
 ## Versioning
 
-- Source of truth: `skill-website-maker/VERSION`
-- Release tag names match VERSION exactly (example: `1.0.0`).
+- Source of truth: `__SKILL_SLUG__/VERSION`
+- Release tag names match VERSION exactly (example: `__VERSION__`).
 

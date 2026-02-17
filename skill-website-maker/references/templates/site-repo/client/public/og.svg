@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0D14"/>
+      <stop offset="1" stop-color="#05060B"/>
+    </linearGradient>
+    <radialGradient id="r1" cx="18%" cy="22%" r="65%">
+      <stop offset="0" stop-color="#00D5FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00D5FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="r2" cx="82%" cy="28%" r="60%">
+      <stop offset="0" stop-color="#7CFF6B" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#7CFF6B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#r1)"/>
+  <rect width="1200" height="630" fill="url(#r2)"/>
+
+  <g opacity="0.18">
+    <path d="M0 160h1200" stroke="#ffffff" stroke-opacity="0.25"/>
+    <path d="M0 320h1200" stroke="#ffffff" stroke-opacity="0.22"/>
+    <path d="M0 480h1200" stroke="#ffffff" stroke-opacity="0.18"/>
+    <path d="M160 0v630" stroke="#ffffff" stroke-opacity="0.18"/>
+    <path d="M360 0v630" stroke="#ffffff" stroke-opacity="0.14"/>
+    <path d="M560 0v630" stroke="#ffffff" stroke-opacity="0.12"/>
+    <path d="M760 0v630" stroke="#ffffff" stroke-opacity="0.10"/>
+    <path d="M960 0v630" stroke="#ffffff" stroke-opacity="0.08"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="96" width="1016" height="438" rx="36" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+  </g>
+
+  <g transform="translate(140, 170)">
+    <g>
+      <rect x="0" y="0" width="84" height="84" rx="26" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+      <rect x="0" y="0" width="84" height="84" rx="26" fill="#00D5FF" opacity="0.10"/>
+      <text x="42" y="52" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="26" font-weight="700" fill="#EEF2FF">JA</text>
+    </g>
+
+    <text x="110" y="18" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" fill="rgba(238,242,255,0.75)">Codex Skill</text>
+    <text x="110" y="78" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="64" font-weight="800" fill="#EEF2FF">Job Applier</text>
+    <text x="110" y="132" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="56" font-weight="800" fill="rgba(238,242,255,0.92)">Master Agent</text>
+
+    <text x="110" y="190" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" fill="rgba(238,242,255,0.78)">
+      Autonomous job applications in your voice
+    </text>
+    <text x="110" y="226" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" fill="rgba(238,242,255,0.62)">
+      Default: review + approve. Optional: Autopilot after a readiness test.
+    </text>
+  </g>
+</svg>
+

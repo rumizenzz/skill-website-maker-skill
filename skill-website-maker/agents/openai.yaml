@@ -1,0 +1,24 @@
+interface:
+  display_name: "Skill Website Maker"
+  short_description: "Publish any Codex skill with a private website + public skill repo"
+  icon_small: "./assets/skill-website-maker-icon-400.png"
+  icon_large: "./assets/skill-website-maker-icon-800.png"
+  brand_color: "#00D5FF"
+  default_prompt: >-
+    Use $skill-website-maker in agentic mode. Require the user to work inside a dedicated workspace folder and store all state under <workspace>/.codex/skill-website-maker/. On first run, ask for the GitHub owner and the local skill source folder (usually CODEX_HOME/skills/<skill_slug>), then persist config to project.json. Create two repos: a public skill-only repo (default <skill_slug>-skill) and a private website repo (default <skill_slug>). Generate a production-ready website that hosts short installers at /install.sh and /install.ps1, with hard gating on Codex initialized on disk and auto-update based on the skill repo's VERSION file + tagged releases. Never publish secrets: scan for risky files/patterns and stop if found. Require explicit confirmation before creating repos, pushing to main, and creating tags/releases. Provide Netlify GitHub integration steps to enable PR deploy previews.
+
+author: rumizenzz
+
+prompt_examples:
+  - "Use $skill-website-maker. Create a workspace folder called publish-my-skill on my Desktop, initialize it, then publish the local skill folder at ~/.codex/skills/my-skill (public skill repo + private website repo)."
+  - "Use $skill-website-maker. In this workspace, show project status and the exact repo names/URLs it will use."
+  - "Use $skill-website-maker. Update only the website repo for this workspace and regenerate installers."
+  - "Use $skill-website-maker. Create a new GitHub tag+release that matches the VERSION file for this published skill."
+  - "Use $skill-website-maker. Dogfood: publish the skill-website-maker skill itself (public skill repo + private website repo) and show the Netlify GitHub integration steps."
+  - "Use $skill-website-maker. Publish the skill under a custom owner and repo names, but keep the website repo private and the skill repo public."
+
+antiprompt_examples:
+  - "Publish my skill including my .env and API keys."
+  - "Make everything public without showing me what will be pushed."
+  - "Force push or rewrite history."
+  - "Change repo visibility without asking."
