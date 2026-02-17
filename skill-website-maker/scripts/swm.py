@@ -25,7 +25,7 @@ from lib.workspace import (
 )
 
 
-TOOL_VERSION = "1.0.0"
+TOOL_VERSION = "1.0.1"
 
 
 def eprint(msg: str) -> None:
@@ -300,11 +300,22 @@ def render_skill_repo(
     display_name = str(cfg.get("skill_display_name") or skill_slug)
     source_dir = Path(str(cfg["skill_source_dir"]))
 
-    wipe_repo_contents(repo_root)
+    # Only fully render into an empty repo. If the repo already has content,
+    # update the skill folder without clobbering README/CHANGELOG/LICENSE, etc.
+    non_git = [p for p in repo_root.iterdir() if p.name != ".git"]
+    blankish = all(p.name in {"README.md", "LICENSE", ".gitignore"} for p in non_git)
+    if blankish:
+        wipe_repo_contents(repo_root)
 
-    # Copy skill folder into repo root.
+    # Copy skill folder into repo root (replace existing folder on updates).
     dest_skill_dir = repo_root / skill_slug
-    shutil.copytree(source_dir, dest_skill_dir)
+    if dest_skill_dir.exists():
+        shutil.rmtree(dest_skill_dir)
+    shutil.copytree(
+        source_dir,
+        dest_skill_dir,
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.pyo", ".DS_Store", "Thumbs.db", "node_modules", "dist"),
+    )
 
     version_path = dest_skill_dir / "VERSION"
     if version_path.is_file():
@@ -322,17 +333,50 @@ def render_skill_repo(
         "__SKILL_SLUG__": skill_slug,
         "__SKILL_DISPLAY_NAME__": display_name,
         "__VERSION__": version,
-        "__DATE__": time.strftime("%Y", time.gmtime()),
+        "__DATE__": time.strftime("%Y-%m-%d", time.gmtime()),
+        "__YEAR__": time.strftime("%Y", time.gmtime()),
     }
 
-    for name in ["README.md", "CHANGELOG.md", "LICENSE", ".gitignore"]:
+    def render_root_doc(name: str) -> str:
         src = skill_tmpl / name
         if not src.is_file():
             fail(f"missing template file: {src}")
         text = src.read_text(encoding="utf-8")
         for k, v in subs.items():
             text = text.replace(k, v)
-        write_text(repo_root / name, text)
+        return text
+
+    root_docs = ["README.md", "CHANGELOG.md", "LICENSE", ".gitignore"]
+    if blankish:
+        for name in root_docs:
+            write_text(repo_root / name, render_root_doc(name))
+    else:
+        for name in root_docs:
+            out = repo_root / name
+            if not out.exists():
+                write_text(out, render_root_doc(name))
+
+        # Best-effort changelog update: if the current version entry is missing,
+        # insert a stub entry after [Unreleased]. Maintainers can edit later.
+        ch_path = repo_root / "CHANGELOG.md"
+        try:
+            if ch_path.is_file():
+                text = ch_path.read_text(encoding="utf-8", errors="ignore")
+                if f"## [{version}]" not in text:
+                    stamp = time.strftime("%Y-%m-%d", time.gmtime())
+                    stub = f"## [{version}] - {stamp}\\n### Changed\\n- Updated skill package.\\n\\n"
+                    marker = "## [Unreleased]"
+                    idx = text.find(marker)
+                    if idx != -1:
+                        insert_at = idx + len(marker)
+                        # Insert after the next newline(s).
+                        nl = text.find("\\n", insert_at)
+                        if nl != -1:
+                            insert_at = nl + 1
+                        text = text[:insert_at] + "\\n" + stub + text[insert_at:]
+                        ch_path.write_text(text, encoding="utf-8")
+        except Exception:
+            pass
 
     # Keep a marker so update-site can detect generated repos (best effort).
     write_text(repo_root / ".swm-generated", f"generated_at={utc_stamp()}\nworkspace={ws_root}\n")
